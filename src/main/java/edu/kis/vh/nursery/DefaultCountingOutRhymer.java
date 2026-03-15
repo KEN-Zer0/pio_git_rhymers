@@ -11,7 +11,7 @@ public class DefaultCountingOutRhymer {
             numbers[++totalCount] = in;
     }
 
-    public boolean callCheck() {
+    public boolean isEmpty() {
         return totalCount == -1;
     }
 
@@ -19,14 +19,14 @@ public class DefaultCountingOutRhymer {
         return totalCount == 11;
     }
 
-    protected int peekaboo() {
-        if (callCheck())
+    protected int peek() {
+        if (isEmpty())
             return -1;
         return numbers[totalCount];
     }
 
     public int countOut() {
-        if (callCheck())
+        if (isEmpty())
             return -1;
         return numbers[totalCount--];
     }
